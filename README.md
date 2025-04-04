@@ -3,7 +3,7 @@
 ThingWorx .NET SDK implementation for OPC UA solicited reads and writes for 2D Arrays
  # Description:
 This ThingWorx Edge .NET SDK implementation provides an alternative way of reading and writing 2D arrays of the same basetypes (eg: [[1,2,3,4],[3,2,4,5]]) defined in an OPC UA server to and from ThingWorx.
-The reads and writes are explicit (blocking) and they use the synchronous API of OPC UA .NET library. The functionalities have been tested with the Kepware's OPC UA server.
+The reads and writes are explicit (blocking) and they use the synchronous API (readValue and write methods) of OPC UA .NET library. The functionalities have been tested with the Kepware's OPC UA server.
 
 # How to use:
  1.  **Install** Microsoft Visual Studio Community 2022 (64-bit) (the example was built with Version 17.13.5, but it is expected that future versions of Visual Studio will be able to open it)
@@ -12,7 +12,7 @@ The reads and writes are explicit (blocking) and they use the synchronous API of
    example: -h xxyyzz.portal.ptc.io -p 443 -k 1111111-1111-1111-1111-123891209831
  3. **Create in ThingWorx Composer a Remote Thing with name "OPCUAClient1**"
  4. **Start** the Debug configuration SDK implementation
- 5.  Go to ThingWorx Composer and map the remote services below:
+ 5.  Go to ThingWorx Composer and **map the remote services below**:
     
 ![image](https://github.com/user-attachments/assets/89f72c57-3129-4066-864a-2aa97e48faa4)
 
@@ -56,5 +56,6 @@ The reads and writes are explicit (blocking) and they use the synchronous API of
  - The implementation was tested with the OPC UA endpoint running with no Security Policies defined. If there's a requirement to connect to an OPC UA server with security policies enabled, than the Security Configuration section of the OPCUAThing class (line 77) will need to be modified.
  - This example is based on the Steam Sensor example from the ThingWorx Edge .NET SDK 5.9.0. The implementation was cleaned by removing almost all the example services and property definitions, but some may still be present there.
  - Additional OPC UA basetypes can be implemented as needed
+ - The implementation contains two additional services, SetOPCUAStringNodeValue and GetOPCUAStringNodeValue. Those have been used during testing, but can be extended as needed to allow the read/write for other non-array basetypes.
  
 
