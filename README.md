@@ -6,7 +6,7 @@ This ThingWorx Edge .NET SDK implementation provides an alternative way of readi
 The reads and writes are explicit (blocking) and they use the synchronous API (readValue and write methods) of OPC UA .NET library. The functionalities have been tested with the Kepware's OPC UA server.
 
 # How to use:
- 1.  **Install** Microsoft Visual Studio Community 2022 (64-bit) (the example was built with Version 17.13.5, but it is expected that future versions of Visual Studio will be able to open it)
+ 1.  **Install** Microsoft Visual Studio Community 2022 (64-bit) (the example was built with Version 17.13.5, but it is expected that future versions of Visual Studio will be able to open it) and the ThingWorx Edge .NET SDK 5.9.0
  2. **Click on Debug / OPCUA Debug Properties and modify the command line argument values to fit your ThingWorx server**:
    The parameters below are: h = server hostname, p = port, k = application key
    example: -h xxyyzz.portal.ptc.io -p 443 -k 1111111-1111-1111-1111-123891209831
